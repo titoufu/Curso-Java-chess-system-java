@@ -1,30 +1,30 @@
 package boardgame;
 
 public class Board {
-	private int rows;
-	private int colums;
+	private int row;
+	private int column;
 	private Piece[][] pieces; // matriz de objetos Piece...
 
-	public Board(int rows, int colums) {
-		this.rows = rows;
-		this.colums = colums;
-		pieces = new Piece[rows][colums];
+	public Board(int row, int column) {
+		this.row = row;
+		this.column = column;
+		pieces = new Piece[row][column];
 	}
 
-	public int getRows() {
-		return rows;
+	public int getRow() {
+		return row;
 	}
 
-	public void setRows(int rows) {
-		this.rows = rows;
+	public void setRow(int row) {
+		this.row = row;
 	}
 
-	public int getColums() {
-		return colums;
+	public int getColumn() {
+		return column;
 	}
 
-	public void setColums(int colums) {
-		this.colums = colums;
+	public void setColumn(int column) {
+		this.column = column;
 	}
 
 	public Piece piece(int row, int column) {
@@ -35,6 +35,10 @@ public class Board {
 	public Piece piece(Position position) {
 		return pieces[position.getRow()][position.getColum()];
 	}
-	
+	public void PlacePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColum()]=piece;
+		piece.position=position;
+
+	}
 
 }
